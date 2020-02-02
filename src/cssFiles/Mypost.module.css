@@ -1,0 +1,16 @@
+.Con{
+  grid-area: c;
+  background-color: cornsilk;
+}
+.item{
+  color: blue;
+  padding: 10px;
+    margin-top: 10px;
+}
+.Con img{
+	width: 780px;
+	height: 300px;
+}
+.ConM{
+    padding: 10px;
+}
