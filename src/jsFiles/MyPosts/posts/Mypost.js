@@ -5,21 +5,28 @@ import Post1 from './Post1';
 const Mypost = (props) => {
 let newTestText = React.createRef();
 let a=()=> {
-    let text = newTestText.current.value;
+    props.addPost();
 
-    props.addPost(text);
-newTestText.current.value='';
 
-}
+};
+let update=()=>{
+    let newText = newTestText.current.value;
+    props.changePost(newText);
+
+};
+
     let newCount =
-        props.likeCount.map(love => <Post1 like={love.like} num={love.num}/>);
+        props.postsProfile.map(love => <Post1 id={love.id} name={love.name}/>);
+
     return (
         <div>
-
             <div className={s.ConM}>
-
                 <h3>My Posts</h3>
-                <textarea ref={newTestText}></textarea>
+                <textarea
+                    onChange={update}
+                    value={props.changes}
+                    ref={newTestText}>
+                </textarea>
             </div>
             <div className={s.ConM}>
                 <button onClick={a}>Add posts</button>
@@ -28,7 +35,6 @@ newTestText.current.value='';
                 {newCount}
             </div>
         </div>
-
     );
-}
+};
 export default Mypost;

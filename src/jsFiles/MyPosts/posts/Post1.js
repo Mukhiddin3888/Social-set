@@ -6,10 +6,10 @@ const Post1 = (props) => {
     return (
         <div className={s.item}>
             <img src='images/images.jfif' alt="asrolxoja"/>
-            post 1<br/>
-            <span> {props.like} {props.num}</span>
+            <br/>
+            <span> {props.id} {props.name}</span>
             <div>
-                <span>like</span>
+                <span></span>
             </div>
 
         </div>
