@@ -6,8 +6,6 @@ import Profile from './jsFiles/MyPosts/Profile.js';
 import Dialogs from './jsFiles/Messages/Dialogs.js';
 import {BrowserRouter, Route} from "react-router-dom";
 import News from "./jsFiles/news/News";
-import {changePost, addPost} from "./redux/state";
-
 
 function App(props) {
 
@@ -24,13 +22,13 @@ function App(props) {
                      <Route path='/dialogs' component={Dialogs}/>*/}
 
                     <Route path='/profile' render={() => <Profile
-                        addPost={addPost}
-                        changePost={changePost}
-                        changes={props.state.profile.onPostChange}
+                        dispatch={props.dispatch}
+                        changes={props.store.getState().profile.onPostChange}
                         postsProfile={props.state.profile.postsProfile}
                     />}/>
-                    <Route path='/dialogs' render={() => <Dialogs posts={props.state.messages.posts}
-                                                                  messagess={props.state.messages.messagess}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs posts={props.store.getState().messages.posts}
+                                                                  store={props.store}
+                                                                  messagesUser={props.store.getState().messages.messagesUser}/>}/>
                     <Route path='/news' render={() => <News/>}/>
 
                 </div>

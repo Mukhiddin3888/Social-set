@@ -1,18 +1,16 @@
 import React from 'react';
 import s from './../../../cssFiles/Mypost.module.css';
 import Post1 from './Post1';
+import {addPostActionCreator, updatePostActionCreator} from "../../../redux/state";
 
 const Mypost = (props) => {
 let newTestText = React.createRef();
 let a=()=> {
-    props.addPost();
-
-
+    addPostActionCreator();
 };
 let update=()=>{
     let newText = newTestText.current.value;
-    props.changePost(newText);
-
+    updatePostActionCreator(newText);
 };
 
     let newCount =
