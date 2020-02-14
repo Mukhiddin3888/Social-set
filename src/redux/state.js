@@ -1,9 +1,6 @@
 import profilePageReducer from './profilePage_reducer';
 import dialogsPageReducer from './dialogsPage_reducer';
-const CHANGE_POST = "CHANGE_POST";
-const ADD_POST = "ADD_POST";
-const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
-const ADD_MESSAGE = 'ADD_MESSAGE';
+
 
 let store = {
     _state: {
@@ -50,26 +47,7 @@ let store = {
     },
 };
 
-export const updateMessageActionCreator = (Text) => {
-    return (
-        store.dispatch({type: CHANGE_MESSAGE, chValue: Text})
-    )
-};
-export const addMessageActionCreator = () => {
-    return (
-        store.dispatch({type: ADD_MESSAGE})
-    )
-};
-export const addPostActionCreator = () => {
-    return (
-        store.dispatch({type: ADD_POST})
-    )
-};
-export const updatePostActionCreator = (newText) => {
-    return (
-        store.dispatch({type: CHANGE_POST, cValue: newText})
-    )
-};
+
 
 
 export default store;

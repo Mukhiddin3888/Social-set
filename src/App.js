@@ -22,7 +22,7 @@ function App(props) {
                      <Route path='/dialogs' component={Dialogs}/>*/}
 
                     <Route path='/profile' render={() => <Profile
-                        dispatch={props.dispatch}
+                        store={props.store}
                         changes={props.store.getState().profile.onPostChange}
                         postsProfile={props.state.profile.postsProfile}
                     />}/>

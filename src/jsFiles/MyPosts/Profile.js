@@ -6,7 +6,7 @@ return(
 <div className={s.Con}>
 				<img src='images/goodMorning.jpg' alt="myfamily"  />
 			<Mypost
-				dispatch={props.dispatch}
+				store={props.store}
 				changes={props.changes}
 				postsProfile={props.postsProfile}  />
 			

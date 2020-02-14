@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import DialogMembers from "./DialogMembers";
-import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/state";
+import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialogsPage_reducer";
 
 const Messages = (props) => {
     return (
@@ -14,10 +14,10 @@ const Messages = (props) => {
 const Dialogs = (props) => {
 let onMessageUpdate=(e)=>{
     let text = e.target.value;
-    updateMessageActionCreator(text);
+   props.store.dispatch(updateMessageActionCreator(text));
 };
 let onMessageAdded=()=>{
-    addMessageActionCreator();
+    props.store.dispatch(addMessageActionCreator());
 }
 
 

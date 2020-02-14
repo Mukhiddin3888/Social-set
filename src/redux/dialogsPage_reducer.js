@@ -34,4 +34,14 @@ let dialogsPageReducer=(state=initialState, action)=>{
     }
 
 };
+export const updateMessageActionCreator = (Text) => {
+    return (
+        ({type: CHANGE_MESSAGE, chValue: Text})
+    )
+};
+export const addMessageActionCreator = () => {
+    return (
+        ({type: ADD_MESSAGE})
+    )
+};
 export default dialogsPageReducer;
