@@ -1,6 +1,6 @@
 import './App';
 import React from 'react';
-import store from './redux/state';
+import store from './redux/redux-store';
 import ReactDOM from 'react-dom';
 import App from "./App";
 let renderInfo=(state)=>{
