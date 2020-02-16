@@ -4,12 +4,11 @@ import dialogsPageReducer from './dialogsPage_reducer';
 
 let reducers = combineReducers(
     {
-        profilePageReducer: profilePageReducer,
-        dialogsPageReducer: dialogsPageReducer
+        profilePage: profilePageReducer,
+        dialogsPage: dialogsPageReducer
     }
 );
 
-
 let store = createStore(reducers);
-
+window.store=store;
 export default store;

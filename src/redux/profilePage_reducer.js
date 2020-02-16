@@ -2,7 +2,7 @@ const CHANGE_POST = "CHANGE_POST";
 const ADD_POST = "ADD_POST";
 
 let initialState = {
-    onPostChange: '',
+    onPostChange: 'r',
     postsProfile: [
         {id: 1, name: "Khamrokhon"},
         {id: 2, name: "Asrolkhoja"},
@@ -13,17 +13,18 @@ let initialState = {
 
 let profilePageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
-            let items = {
-                id: 5,
-                name: state.onPostChange,
-            }
-            state.postsProfile.push(items);
-            state.onPostChange = '';
-            return state;
+        case ADD_POST:{
+            return{
+                ...state,
+                postsProfile : [...state.postsProfile,{ id: 5, name: state.onPostChange,}],
+                onPostChange :'',
+            };
+        }
         case CHANGE_POST: {
-            state.onPostChange = action.cValue;
-            return state;
+            return{
+                ...state,
+                onPostChange: action.newText,
+            };
         }
         default:return state;
     }
@@ -35,7 +36,7 @@ export const addPostActionCreator = () => {
 };
 export const updatePostActionCreator = (newText) => {
     return (
-        ({type: CHANGE_POST, cValue: newText})
+        ({type: CHANGE_POST, newText: newText})
     )
 };
 

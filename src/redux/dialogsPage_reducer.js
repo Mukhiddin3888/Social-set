@@ -19,18 +19,23 @@ let initialState={
 let dialogsPageReducer=(state=initialState, action)=>{
     switch (action.type) {
         case CHANGE_MESSAGE: {
-            state.newMessages = action.chValue;
-            return state;
+            return{
+                ...state,
+                newMessages: action.chValue
+            };
         }
         case ADD_MESSAGE: {
             let newMessageBody = {
                 id: 5,
                 message: state.newMessages
             };
-            state.messagesUser.push(newMessageBody);
-            state.newMessages = '';
-            return state
-        }default:return state;
+            return{
+                ...state,
+                messagesUser: [...state.messagesUser,newMessageBody],
+                newMessages:'',
+            };
+        }
+        default:return state;
     }
 
 };
