@@ -8,12 +8,15 @@
 	 text-decoration: none;
 	font-size: larger;
 	margin: 10px;
- }
+
+}
 .dialogItems a {
 	text-decoration: none;
 }
-.messages{
+.message{
 	padding: 5px;
+	background-color: aqua;
+
 }
 
 

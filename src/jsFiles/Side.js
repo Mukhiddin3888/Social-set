@@ -18,7 +18,7 @@ const Side = (props) => {
                     <NavLink to="/news" activeClassName={s.active}>News</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/music" activeClassName={s.active}>Musics</NavLink>
+                    <NavLink to="/users" activeClassName={s.active}>Users</NavLink>
                 </div>
                 <div className={s.item}>
                     <NavLink to="/settings" activeClassName={s.active}>Settings</NavLink>

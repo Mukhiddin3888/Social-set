@@ -2,7 +2,7 @@ const CHANGE_POST = "CHANGE_POST";
 const ADD_POST = "ADD_POST";
 
 let initialState = {
-    onPostChange: 'r',
+    onPostChange: '',
     postsProfile: [
         {id: 1, name: "Khamrokhon"},
         {id: 2, name: "Asrolkhoja"},
